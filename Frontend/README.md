@@ -1,12 +1,48 @@
-# React + Vite
+Step 1: Setup Backend Environment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+    Navigate to the backend folder:
 
-Currently, two official plugins are available:
+cd backend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    Install dependencies:
 
-## Expanding the ESLint configuration
+npm install
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    Create a .env file inside the backend folder with the following content (replace placeholders):
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_mysql_password
+DB_NAME=cleaning_service_db
+JWT_SECRET=your_jwt_secret
+PORT=5000
+
+    Create the database in MySQL:
+
+CREATE DATABASE cdb;
+
+    Start the backend server:
+
+npx nodemon server.js
+
+Step 2: Setup Frontend Environment
+
+    Open a new terminal and navigate to the frontend folder:
+
+cd ../frontend
+
+    Install dependencies:
+
+npm install
+
+    Create a .env file inside the frontend folder:
+
+VITE_API_BASE_URL=http://localhost:5000/api
+
+    Start the frontend development server:
+
+npm run dev
+
+    Open your browser at:
+
+http://localhost:5173
